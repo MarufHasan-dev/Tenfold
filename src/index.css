@@ -18,8 +18,8 @@ body {
 div#root {
   height: 100%;
   width: 100%;
-  max-height: 400px;
-  max-width: 400px;
+  max-height: 450px;
+  max-width: 450px;
 }
 
 main {
@@ -30,6 +30,8 @@ main {
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
+  border: 1px solid #00000026;
+  box-shadow: 0px 2px 2px 0px #00000026;
 }
 
 .title {
@@ -53,6 +55,7 @@ main {
   margin: 0;
   text-align: center;
   width: 330px;
+  margin-bottom: -8px;
 }
 
 .container {
@@ -79,6 +82,24 @@ main {
 
 .dice-icons {
   width: 50px;
+}
+
+.status {
+  display: flex;
+  width: 330px;
+  justify-content: space-between;
+  font-family: "Karla", sans-serif;
+  font-weight: 700;
+  color: #2b283a;
+  font-size: 21px;
+}
+
+.status > p {
+  margin: 0;
+  background-color: #5035ff37;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: 1px solid #00000026;
 }
 
 .roll-btn {

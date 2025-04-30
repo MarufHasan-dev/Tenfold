@@ -10,6 +10,8 @@ export default function Die(props) {
     backgroundColor: props.isHeld ? " #59e391" : "#ffffff",
   };
 
+  console.log(props.gameWon);
+
   const diceImages = {
     1: Die_1,
     2: Die_2,
@@ -21,13 +23,14 @@ export default function Die(props) {
 
   return (
     <button
-      style={styles}
       className="die"
+      style={styles}
       onClick={props.hold}
       aria-pressed={props.isHeld}
       aria-label={`Die with value ${props.value}, ${
         props.isHeld ? "held" : "not held"
       }`}
+      disabled={props.gameWon ? true : false}
     >
       <img className="dice-icons" src={diceImages[props.value]} alt="" />
     </button>
