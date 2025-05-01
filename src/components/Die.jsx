@@ -10,8 +10,6 @@ export default function Die(props) {
     backgroundColor: props.isHeld ? " #59e391" : "#ffffff",
   };
 
-  console.log(props.gameWon);
-
   const diceImages = {
     1: Die_1,
     2: Die_2,

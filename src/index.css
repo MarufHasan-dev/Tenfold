@@ -36,7 +36,7 @@ main {
 
 .title {
   font-family: "Karla", sans-serif;
-  color: #2b283a;
+  color: #3017ae;
   font-weight: 700;
   font-size: 40px;
   line-height: 100%;
@@ -92,14 +92,24 @@ main {
   font-weight: 700;
   color: #2b283a;
   font-size: 21px;
+  gap: 10px;
 }
 
 .status > p {
+  color: #000000b2;
   margin: 0;
   background-color: #5035ff37;
   padding: 5px 10px;
   border-radius: 5px;
   border: 1px solid #00000026;
+}
+
+.status .timer {
+  width: 100%;
+}
+
+.status .total-rolls {
+  width: 100%;
 }
 
 .roll-btn {

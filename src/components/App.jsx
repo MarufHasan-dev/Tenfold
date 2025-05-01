@@ -4,16 +4,16 @@ import { nanoid } from "nanoid";
 import Die from "./Die";
 import Confetti from "react-confetti";
 
-// To do
-// add a timer to see how long it's taking to finish the game
-
 export default function App() {
   const [dice, setDice] = useState(() => generateAllNewDice());
   const [rollCount, setRollCount] = useState(0);
   const [gameRunning, setGameRunning] = useState(false);
   const [gameWon, setGameWon] = useState(false);
+  const [elapsedTime, setElapsedTime] = useState(0);
 
   const buttonRef = useRef(null);
+  const intervalIdRef = useRef(null);
+  const startTimeRef = useRef(0);
 
   useEffect(() => {
     const allHeld = dice.every((die) => die.isHeld);
@@ -27,18 +27,11 @@ export default function App() {
     }
   }, [dice]);
 
-  // const gameWon =
-  //   dice.every((die) => die.isHeld) &&
-  //   dice.every((die) => die.value === dice[0].value)
-  //     ? true
-  //     : false;
-
   gameWon ? buttonRef.current?.focus() : null;
 
   function generateAllNewDice() {
     return new Array(10).fill(0).map(() => ({
-      // value: Math.ceil(Math.random() * 6),
-      value: 1,
+      value: Math.ceil(Math.random() * 6),
       isHeld: false,
       id: nanoid(),
     }));
@@ -62,6 +55,7 @@ export default function App() {
       setDice(generateAllNewDice());
       setRollCount(0);
       setGameRunning(false);
+      setElapsedTime(0);
     } else {
       setDice((pervDice) =>
         pervDice.map((die) =>
@@ -83,6 +77,31 @@ export default function App() {
     />
   ));
 
+  useEffect(() => {
+    if (gameRunning) {
+      startTimeRef.current = Date.now() - elapsedTime;
+      intervalIdRef.current = setInterval(() => {
+        setElapsedTime(Date.now() - startTimeRef.current);
+      }, 100);
+    }
+
+    return () => {
+      clearInterval(intervalIdRef.current);
+    };
+  }, [gameRunning]);
+
+  function formatStopwatchTime() {
+    let minutes = Math.floor((elapsedTime / (1000 * 60)) % 60);
+    let seconds = Math.floor((elapsedTime / 1000) % 60);
+    let milliseconds = Math.floor((elapsedTime % 1000) / 10);
+
+    minutes = String(minutes).padStart(2, "0");
+    seconds = String(seconds).padStart(2, "0");
+    milliseconds = String(milliseconds).padStart(2, "0");
+
+    return `${minutes}:${seconds}:${milliseconds}`;
+  }
+
   return (
     <main>
       {gameWon && <Confetti recycle={false} numberOfPieces={1000} />}
@@ -97,8 +116,8 @@ export default function App() {
         current value between rolls.
       </p>
       <div className="status">
-        <p>Total Roll: {rollCount}</p>
-        <p>{gameRunning ? "running" : "not running"}</p>
+        <p className="timer">{formatStopwatchTime()}</p>
+        <p className="total-rolls">Total Roll: {rollCount}</p>
       </div>
       <div className="container">{diceElements}</div>
       <button ref={buttonRef} className="roll-btn" onClick={rollDice}>
