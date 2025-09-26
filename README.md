@@ -15,14 +15,14 @@ Tenfold is a simple yet challenging dice game where you roll ten dice and try to
 
 ## Features
 
-*   **Interactive Dice:** Click on dice to freeze and unfreeze them.
-*   **Win Condition:** The game automatically detects when you've won.
-*   **Roll Counter:** Tracks the number of rolls you've taken.
-*   **Timer:** See how fast you can win the game.
+- **Interactive Dice:** Click on dice to freeze and unfreeze them.
+- **Win Condition:** The game automatically detects when you've won.
+- **Roll Counter:** Tracks the number of rolls you've taken.
+- **Timer:** See how fast you can win the game.
 
 ## Technologies Used
 
-*   [React.js](https://reactjs.org/)
+- [React.js](https://reactjs.org/)
 
 ## Installation
 
@@ -48,7 +48,7 @@ To run this project locally, follow these steps:
 
 ## Screenshots
 
-*(Add your screenshots or GIFs here to showcase the game!)*
+_(Not available now)_
 
 ## License
 
