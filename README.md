@@ -1,12 +1,55 @@
-# React + Vite
+# Tenfold 🎲
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A fun and addictive dice game built with React.js. The goal is to get all ten dice to show the same value. Can you do it in the fewest rolls?
 
-Currently, two official plugins are available:
+## Description
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Tenfold is a simple yet challenging dice game where you roll ten dice and try to get them all to match. You can "freeze" dice by clicking on them, which will hold their value for the next roll. Keep rolling until all dice are the same!
 
-## Expanding the ESLint configuration
+## How to Play
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+1.  **Roll the Dice:** Click the "Roll" button to start the game and roll the dice.
+2.  **Freeze Dice:** Click on any die to freeze it. Frozen dice will not be affected by the next roll. Click on a frozen die again to unfreeze it.
+3.  **Keep Rolling:** Continue rolling the unfrozen dice until all ten dice show the same value.
+4.  **You Win!:** Once all dice match, you've won the game!
+
+## Features
+
+*   **Interactive Dice:** Click on dice to freeze and unfreeze them.
+*   **Win Condition:** The game automatically detects when you've won.
+*   **Roll Counter:** Tracks the number of rolls you've taken.
+*   **Timer:** See how fast you can win the game.
+
+## Technologies Used
+
+*   [React.js](https://reactjs.org/)
+
+## Installation
+
+To run this project locally, follow these steps:
+
+1.  Clone the repository:
+    ```bash
+    git clone https://github.com/your-username/tenfold.git
+    ```
+2.  Navigate to the project directory:
+    ```bash
+    cd tenfold
+    ```
+3.  Install the dependencies:
+    ```bash
+    npm install
+    ```
+4.  Start the development server:
+    ```bash
+    npm run dev
+    ```
+5.  Open your browser and go to `http://localhost:5173` (or the address shown in your terminal).
+
+## Screenshots
+
+*(Add your screenshots or GIFs here to showcase the game!)*
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
